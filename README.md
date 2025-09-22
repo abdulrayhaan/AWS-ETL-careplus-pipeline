@@ -26,24 +26,21 @@ The solution is **serverless, automated, and scalable**.
 ---
 
 ## 📂 Project Structure
-AWS-ETL-careplus-pipeline/
+
+aws-etl-careplus-pipeline/  
+├── src/          
+│   ├── ingestion/                     # Python scripts for uploading raw files to S3  
+│   ├── lambda/                        # Lambda function code  
+│   └── glue/                          # Glue ETL script(s)  
+  ── docs/  
+│   ├── pipeline.png                   # Architecture diagram  
+│   └── AWS_ETL_Pipeline_Screenshots.pdf  # Console screenshots  
 │
-├── src/
-│   ├── ingestion/             # Python scripts for uploading raw files to S3
-│   ├── aws-lambda/                # Lambda function code (logs + tickets + Redshift loaders)
-│   └── glue/                  # Glue ETL script(s) for support tickets
-│
-├── docs/
-│   ├── pipeline_architecture_view.png           # Architecture diagram
-│   └── AWS_ETL_Pipeline_Screenshots.pdf  # Console screenshots
-│
-└── README.md                  # Project documentation
+└── README.md
 
 
----
 
 ## 🔄 Pipeline Workflow
-
 ### 1. **Data Ingestion**
 - Raw files from Careplus system are uploaded into:
   - `support_logs/raw/`  
@@ -81,6 +78,7 @@ AWS-ETL-careplus-pipeline/
 - **Power BI** connects to Redshift warehouse.  
 - Dashboards auto-refresh when new processed data arrives.  
 
+</details>
 ---
 
 ## 📊 Final Output
